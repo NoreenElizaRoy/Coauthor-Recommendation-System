@@ -3,7 +3,7 @@ import networkx as nx
 import pickle
 
 df = pd.read_csv("data/cleaned_dataset.csv")
-
+df["author"] = df["author"].str.lower().str.strip()
 G = nx.Graph()
 
 for title, group in df.groupby("title"):

@@ -7,12 +7,14 @@ df = pd.read_csv("data/cleaned_profiles.csv")
 authors = df["author"].tolist()
 profiles = df["title"].tolist()
 
+
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 embeddings = model.encode(profiles)
 
 data = {
     "authors": authors,
+    "profiles": profiles,
     "embeddings": embeddings
 }
 

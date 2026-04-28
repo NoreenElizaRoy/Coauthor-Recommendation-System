@@ -7,7 +7,7 @@ df = df.dropna()
 
 # remove duplicates
 df = df.drop_duplicates()
-
+df["author"] = df["author"].str.lower().str.strip()
 # save cleaned data
 df.to_csv("data/cleaned_dataset.csv", index=False)
 
